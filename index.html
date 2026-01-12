@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Elite Dance Academy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ===== GLOBAL ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background:#0b0b0b;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* ===== GLITTER EFFECT ===== */
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:url("https://i.imgur.com/8KQbK9D.png");
+    opacity:0.05;
+    pointer-events:none;
+    animation: glitter 3s infinite linear;
+}
+@keyframes glitter{
+    0%{transform:translateY(0);}
+    100%{transform:translateY(-100px);}
+}
+
+/* ===== NAVBAR ===== */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:#111;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:999;
+}
+nav h1{
+    color:#f39c12;
+}
+nav ul{
+    display:flex;
+    list-style:none;
+}
+nav ul li{
+    margin-left:25px;
+}
+nav ul li a{
+    text-decoration:none;
+    color:#fff;
+    transition:0.3s;
+}
+nav ul li a:hover{
+    color:#f39c12;
+}
+
+/* ===== SLIDER ===== */
+.slider{
+    margin-top:80px;
+    height:90vh;
+    background:url("https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad") center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+.slider h2{
+    font-size:50px;
+    background:rgba(0,0,0,0.6);
+    padding:20px 30px;
+    border-radius:10px;
+}
+
+/* ===== SECTION ===== */
+section{
+    padding:80px 50px;
+    text-align:center;
+}
+section h2{
+    font-size:36px;
+    color:#f39c12;
+    margin-bottom:30px;
+}
+
+/* ===== DANCE STYLES ===== */
+.styles{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+.style-card{
+    position:relative;
+    overflow:hidden;
+    border-radius:15px;
+    cursor:pointer;
+}
+.style-card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    transition:0.5s;
+}
+.style-card:hover img{
+    transform:scale(1.1);
+}
+.style-card span{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    padding:15px;
+    background:rgba(0,0,0,0.7);
+    font-size:20px;
+}
+
+/* ===== REVIEWS ===== */
+.reviews{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+}
+.review{
+    background:#111;
+    padding:25px;
+    width:300px;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(243,156,18,0.2);
+}
+
+/* ===== CONTACT FORM ===== */
+form{
+    max-width:500px;
+    margin:auto;
+}
+input,textarea{
+    width:100%;
+    margin-bottom:15px;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+}
+button{
+    background:#f39c12;
+    border:none;
+    padding:12px 25px;
+    font-size:18px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* ===== FOOTER SOCIAL ===== */
+footer{
+    background:#111;
+    padding:25px;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+}
+footer a{
+    font-size:30px;
+}
+.fa-instagram{color:#E1306C;}
+.fa-facebook{color:#1877F2;}
+.fa-whatsapp{color:#25D366;}
+
+/* ===== FLOAT WHATSAPP ===== */
+.whatsapp-float{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:#25D366;
+    padding:15px;
+    border-radius:50%;
+    font-size:28px;
+    color:white;
+    z-index:999;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+    <h1>Elite Dance Academy</h1>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#styles">Styles</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- SLIDER -->
+<div class="slider">
+    <h2>Feel The Rhythm • Live The Dance</h2>
+</div>
+
+<!-- DANCE STYLES -->
+<section id="styles">
+<h2>Dance Styles</h2>
+<div class="styles">
+    <div class="style-card">
+        <img src="https://images.unsplash.com/photo-1547153760-18fc86324498">
+        <span>Hip Hop</span>
+    </div>
+    <div class="style-card">
+        <img src="https://images.unsplash.com/photo-1524863479829-916d8e77f114">
+        <span>Contemporary</span>
+    </div>
+    <div class="style-card">
+        <img src="https://images.unsplash.com/photo-1532635241-17e820acc59f">
+        <span>Bollywood</span>
+    </div>
+    <div class="style-card">
+        <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b">
+        <span>Classical</span>
+    </div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2>About Us</h2>
+<p style="max-width:800px;margin:auto;font-size:18px;line-height:1.7;">
+Elite Dance Academy is a professional dance training institute dedicated to nurturing talent, confidence, and creativity. 
+Our experienced instructors provide high-quality training in multiple dance styles with a focus on performance, fitness, 
+and self-expression. Whether you are a beginner or a professional, we help you shine on stage and beyond.
+</p>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+<h2>Student Reviews</h2>
+<div class="reviews">
+    <div class="review">⭐️⭐️⭐️⭐️⭐️<br>Best academy with amazing teachers!</div>
+    <div class="review">⭐️⭐️⭐️⭐️⭐️<br>Professional training and great atmosphere.</div>
+    <div class="review">⭐️⭐️⭐️⭐️⭐️<br>My confidence improved a lot.</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact Us</h2>
+<form action="https://formsubmit.co/yourgmail@gmail.com" method="POST">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" rows="4"></textarea>
+    <button type="submit">Send Message</button>
+</form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-whatsapp"></i></a>
+</footer>
+
+<!-- FLOAT WHATSAPP -->
+<a href="https://wa.me/919999999999" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+</body>
+</html>
