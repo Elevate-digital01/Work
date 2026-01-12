@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esthetic Events – Luxury Event Planner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* ================== GLOBAL STYLES ================== */
+        :root {
+            --gold: #c9a24d;
+            --dark-bg: #0a0a0a;
+            --card-bg: #111111;
+            --text-gray: #ddd;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: var(--dark-bg);
+            color: #fff;
+            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+
+        section { padding: 80px 20px; max-width: 1200px; margin: auto; }
+        h2 { text-align: center; color: var(--gold); margin-bottom: 40px; text-transform: uppercase; letter-spacing: 3px; }
+
+        /* ================== NAVIGATION ================== */
+        .top-nav {
+            position: fixed;
+            top: 0; width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: flex; justify-content: center; align-items: center;
+            padding: 15px 0; z-index: 999;
+            border-bottom: 2px solid var(--gold);
+        }
+        .top-nav a {
+            text-decoration: none; font-size: 14px; font-weight: 600;
+            padding: 0 15px; color: #fff; transition: 0.3s;
+        }
+        .top-nav a:hover { color: var(--gold); }
+        .nav-bullet { color: var(--gold); font-size: 12px; margin: 0 5px; }
+
+        /* ================== HERO SECTION ================== */
+        .hero {
+            height: 80vh;
+            display: flex; align-items: center; justify-content: center;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1500') center/cover;
+            text-align: center;
+        }
+        .hero h1 { font-size: clamp(40px, 8vw, 70px); margin: 0; text-shadow: 0 0 20px var(--gold); }
+        .hero p { letter-spacing: 8px; color: var(--gold); font-weight: 300; }
+
+        /* ================== SERVICES BANNERS ================== */
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-banner {
+            position: relative; height: 350px; border-radius: 20px;
+            overflow: hidden; border: 1px solid rgba(201, 162, 77, 0.3);
+        }
+        .service-banner img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .service-banner:hover img { transform: scale(1.1); }
+        .service-info {
+            position: absolute; bottom: 0; left: 0; width: 100%;
+            padding: 25px; background: linear-gradient(transparent, rgba(0,0,0,0.9));
+        }
+        .service-info h3 { color: var(--gold); margin: 0; }
+
+        /* ================== PACKAGES ================== */
+        .package-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+        .package-card { background: var(--card-bg); padding: 20px; border-radius: 15px; text-align: center; border: 1px solid #222; }
+        .package-card img { width: 100%; height: 150px; object-fit: cover; border-radius: 10px; }
+        .price { font-size: 22px; color: var(--gold); font-weight: bold; margin: 15px 0; }
+        .btn-book { 
+            display: inline-block; padding: 10px 20px; background: var(--gold); 
+            color: #000; text-decoration: none; border-radius: 25px; font-weight: bold; 
+        }
+
+        /* ================== CONTACT & REVIEWS ================== */
+        .flex-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        form { background: var(--card-bg); padding: 30px; border-radius: 20px; border: 1px solid var(--gold); }
+        input, select, textarea { 
+            width: 100%; padding: 12px; margin-bottom: 15px; 
+            background: #000; color: #fff; border: 1px solid #333; border-radius: 8px; box-sizing: border-box;
+        }
+        button { width: 100%; padding: 15px; background: var(--gold); border: none; font-weight: bold; cursor: pointer; border-radius: 25px; }
+
+        /* ================== FLOATING & FOOTER ================== */
+        .whatsapp-float {
+            position: fixed; bottom: 30px; right: 30px; background: #25d366;
+            width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 1000;
+        }
+        footer { text-align: center; padding: 60px 20px; border-top: 1px solid #222; background: #050505; }
+        
+        #thankyou-msg { display: none; text-align: center; padding: 50px; }
+    </style>
+</head>
+<body>
+
+<nav class="top-nav">
+    <a href="#home">HOME</a>
+    <span class="nav-bullet">◆</span>
+    <a href="#services">SERVICES</a>
+    <span class="nav-bullet">◆</span>
+    <a href="#packages">PACKAGES</a>
+    <span class="nav-bullet">◆</span>
+    <a href="#contact">CONTACT</a>
+</nav>
+
+<section id="home" class="hero">
+    <div>
+        <h1>ESTHETIC EVENTS</h1>
+        <p>K A N P U R</p>
+    </div>
+</section>
+
+<section id="services">
+    <h2>Luxury Services</h2>
+    <div class="service-grid">
+        <div class="service-banner">
+            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200" alt="Wedding">
+            <div class="service-info"><h3>Royal Wedding Decor</h3><p>Dream weddings in gold-dusted reality.</p></div>
+        </div>
+        <div class="service-banner">
+            <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1200" alt="Surprise">
+            <div class="service-info"><h3>Romantic Surprises</h3><p>Candlelight settings & balloon artistry.</p></div>
+        </div>
+        <div class="service-banner">
+            <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200" alt="Celebration">
+            <div class="service-info"><h3>Grand Celebrations</h3><p>Milestone birthdays with elegance.</p></div>
+        </div>
+    </div>
+</section>
+
+<section id="packages">
+    <h2>Curated Packages</h2>
+    <div class="package-grid">
+        <div class="package-card">
+            <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=500">
+            <h3>Silver Elegance</h3>
+            <p class="price">₹4,999</p>
+            <a href="https://wa.me/918957555870" class="btn-book">Book Now</a>
+        </div>
+        <div class="package-card">
+            <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=500">
+            <h3>Golden Luxury</h3>
+            <p class="price">₹9,999</p>
+            <a href="https://wa.me/918957555870" class="btn-book">Book Now</a>
+        </div>
+        <div class="package-card">
+            <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=500">
+            <h3>Platinum Dream</h3>
+            <p class="price">₹14,999</p>
+            <a href="https://wa.me/918957555870" class="btn-book">Book Now</a>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="flex-container">
+        <div>
+            <h2>Book Your Event</h2>
+            <form id="bookingForm" onsubmit="handleBooking(event)">
+                <input type="text" placeholder="Your Name" required>
+                <input type="tel" placeholder="Mobile Number" required>
+                <select required>
+                    <option value="">Select Event Type</option>
+                    <option>Anniversary</option>
+                    <option>Birthday</option>
+                    <option>Proposal</option>
+                </select>
+                <textarea rows="4" placeholder="Event Details"></textarea>
+                <button type="submit">Submit Booking</button>
+            </form>
+            <div id="thankyou-msg">
+                <h3>Thank You!</h3>
+                <p>Our team will contact you shortly.</p>
+            </div>
+        </div>
+        
+        <div>
+            <h2>Happy Clients</h2>
+            <div id="reviewList">
+                <p><i>"Very professional team. Worth every rupee!"</i> - Rahul S.</p>
+                <p><i>"Beautiful decoration for my anniversary."</i> - Priya M.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>📞 8957555870 | Kanpur, UP</p>
+    <p>© 2025 Esthetic Events | Designed with ❤️</p>
+</footer>
+<style>
+    .footer-socials {
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+    .footer-socials a {
+        transition: transform 0.3s ease, filter 0.3s ease;
+    }
+    .footer-socials a:hover {
+        transform: translateY(-5px);
+        filter: brightness(1.2);
+    }
+    .social-icon {
+        width: 35px;
+        height: 35px;
+        /* This filter makes black icons look like your gold theme color */
+        filter: invert(72%) sepia(21%) saturate(1008%) hue-rotate(3deg) brightness(91%) contrast(88%);
+    }
+</style>
+
+<footer id="footer">
+    <h2>Connect With Us</h2>
+    <div class="footer-socials">
+        <a href="https://www.facebook.com/YOUR_PROFILE" target="_blank" aria-label="Facebook">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" class="social-icon" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/nikk_verma01" target="_blank" aria-label="Instagram">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="social-icon" alt="Instagram">
+        </a>
+    </div>
+    
+    <p>📞 8957555870 | Kanpur, UP</p>
+    <p>© 2025 Esthetic Events | Designed with ❤️</p>
+</footer>
+
+
+<a class="whatsapp-float" href="https://wa.me/918957555870" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="30" alt="WhatsApp">
+</a>
+
+<script>
+function handleBooking(e) {
+    e.preventDefault();
+    document.getElementById("bookingForm").style.display = "none";
+    document.getElementById("thankyou-msg").style.display = "block";
+}
+</script>
+
+</body>
+</html>
+
+<section id="feedback">
+    <h2>Client Feedback</h2>
+    <div class="feedback-box">
+        <form id="feedbackForm" onsubmit="submitFeedback(event)">
+            <input type="text" id="fb-name" placeholder="Your Name" required>
+            <div class="rating">
+                <span>Rating:</span>
+                <select id="fb-rating" style="width: auto; margin: 0;">
+                    <option value="5">★★★★★ (Excellent)</option>
+                    <option value="4">★★★★☆ (Great)</option>
+                    <option value="3">★★★☆☆ (Good)</option>
+                </select>
+            </div>
+            <textarea id="fb-comment" rows="4" placeholder="Share your experience with us..." required></textarea>
+            <button type="submit" class="btn-gold">Submit Review</button>
+        </form>
+        <div id="feedback-thanks">
+            <h3>Thank you for your feedback!</h3>
+            <p>Your review helps us stay esthetic.</p>
+        </div>
+    </div>
+</section>
+
+<script>
+    function submitFeedback(e) {
+        e.preventDefault();
+        document.getElementById("feedbackForm").style.display = "none";
+        document.getElementById("feedback-thanks").style.display = "block";
+        
+        // This is where you would normally send data to a server
+        console.log("Feedback from: " + document.getElementById("fb-name").value);
+    }
+</script>
+
+</body>
+</html>
